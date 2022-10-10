@@ -1,3 +1,3 @@
 public interface Run {
-    public void run();
+    void run(String name,int dist);
 }

@@ -1,3 +1,3 @@
 public interface Jump {
-    public void jump();
+    void jump(String name, int hei);
 }

@@ -1,4 +1,4 @@
-public class Bot implements Run, Jump {
+public class Bot extends Members implements Run, Jump {
     String name;
     int run;
     int jump;
@@ -8,10 +8,12 @@ public class Bot implements Run, Jump {
         this.run=run;
         this.jump=jump;
     }
-    public void run(){
-        System.out.println("Робот "+name+" пробежал "+run+" условных единиц");
+    public void run(String name, int dist){
+
+        System.out.println("Робот "+name+" пробежал "+dist+" условных единиц");
     }
-    public void jump(){
-        System.out.println("Робот "+name+" пригнул на "+jump+" условных единиц");
+    public void jump(String name, int hei){
+
+        System.out.println("Робот "+name+" пригнул на "+hei+" условных единиц");
     }
 }

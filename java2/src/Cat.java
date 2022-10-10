@@ -1,4 +1,4 @@
-public class Cat implements Run, Jump {
+public class Cat extends Members implements Run, Jump {
     public String name;
     public int run;
     public int jump;
@@ -9,10 +9,12 @@ public class Cat implements Run, Jump {
         this.jump=jump;
     }
 
-    public void run(){
-        System.out.println("Кот "+name+" пробежал "+run+" условных единиц");
+    public void run(String name, int dist){
+
+        System.out.println("Кот "+name+" пробежал "+dist+" условных единиц");
     }
-    public void jump(){
-        System.out.println("Кот "+name+" пригнул на "+jump+" условных единиц");
+    public void jump(String name, int hei){
+
+        System.out.println("Кот "+name+" пригнул на "+hei+" условных единиц");
     }
 }
