@@ -1,4 +1,4 @@
-public class Run_Place extends Polosa implements Run{
+public class Run_Place implements Run{
     int length;
 
     public Run_Place(int length){
@@ -15,4 +15,7 @@ public class Run_Place extends Polosa implements Run{
         }
     }
 
+    public boolean runpr(int len) {
+        return false;
+    }
 }

@@ -1,4 +1,4 @@
-public class Cat extends Members implements Run, Jump {
+public class Cat implements Run, Jump, PolosaPr {
     public String name;
     public int run;
     public int jump;
@@ -16,5 +16,15 @@ public class Cat extends Members implements Run, Jump {
     public void jump(String name, int hei){
 
         System.out.println("Кот "+name+" пригнул на "+hei+" условных единиц");
+    }
+    public void Polosa(){
+        //System.out.println(name+" не смог преодолеть полосу препятствий");
+        //System.out.println(name+" успешно преодолевает полосу препятствий");
+    }
+    public boolean runpr( int len){
+        return len>run;
+    }
+    public boolean jumppr(int hei){
+        return hei>jump;
     }
 }

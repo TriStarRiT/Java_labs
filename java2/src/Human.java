@@ -1,4 +1,4 @@
-public class Human extends Members implements Run, Jump {
+public class Human implements Run, Jump, PolosaPr {
     String name;
     int run;
     int jump;
@@ -15,5 +15,15 @@ public class Human extends Members implements Run, Jump {
     }
     public void jump(String name, int hei){
         System.out.println("Человек "+name+" пригнул на "+hei+" условных единиц");
+    }
+    public void Polosa(){
+        //System.out.println(name+" не смог преодолеть полосу препятствий");
+        //System.out.println(name+" успешно преодолевает полосу препятствий");
+    }
+    public boolean runpr( int len){
+        return len>run;
+    }
+    public boolean jumppr(int hei){
+        return hei>jump;
     }
 }

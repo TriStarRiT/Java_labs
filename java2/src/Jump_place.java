@@ -1,4 +1,4 @@
-public class Jump_place extends Polosa implements Jump {
+public class Jump_place implements Jump {
     int height;
 
     public Jump_place(int height){
@@ -12,5 +12,8 @@ public class Jump_place extends Polosa implements Jump {
         else{
             System.out.println(name+" не смог перепрыгнуть препятствие высотой "+ hei);
         }
+    }
+    public boolean jumppr(int hei) {
+        return false;
     }
 }

@@ -6,8 +6,6 @@ public class Main {
         Human Bob = new Human("Боб",100,3);
         Cat Bar = new Cat("Барсик",50,2);
         Bot Rob = new Bot("Роберт",200,1);
-        Run_Place RPlace = new Run_Place(78);
-        Jump_place JPlace = new Jump_place(2);
 
         Bob.run(Bob.name,Bob.run);
         Bob.jump(Bob.name, Bob.jump);
@@ -20,6 +18,9 @@ public class Main {
 
         System.out.println("========================Задание 2========================");
 
+        Run_Place RPlace = new Run_Place(78);
+        Jump_place JPlace = new Jump_place(2);
+
         RPlace.run(Bob.name, Bob.run);
         JPlace.jump(Bob.name, Bob.jump);
 
@@ -31,22 +32,66 @@ public class Main {
 
         System.out.println("========================Задание 3========================");
 
-        Members[] members = new Members[3];
-        members[0]=Bob;
-        members[1]=Bar;
-        members[2]=Rob;
-        Polosa[] polosa = new Polosa[3];
-        polosa[0]=RPlace;
-        polosa[1]=JPlace;
-        polosa[2]=RPlace;
 
-        Polosa.PolosaPr(members, polosa);
+        int[] polosa = new int[3];
+        polosa[0]=RPlace.length;
+        polosa[1]=JPlace.height;
+        polosa[2]=RPlace.length;
 
-        for (int i=0;i< members.length;i++){
             for (int j=0;j< polosa.length;j++){
-                if (polosa[j]==RPlace){
-                    boolean b=Members.run(members[i].name, members[i].run);
+                if (polosa[j]==RPlace.length) {
+
+                    if (Bob.runpr(RPlace.length) == true) {
+                        System.out.println(Bob.name + " не смог преодолеть полосу препятствий");
+                        break;
+                    }
                 }
+                if (polosa[j]==JPlace.height){
+                    if(Bob.jumppr(JPlace.height)==true){
+                        System.out.println(Bob.name+" не смог преодолеть полосу препятствий");
+                        break;
+                    }
+                }
+                if(j== polosa.length-1) {
+                    System.out.println(Bob.name + " успешно преодолевает полосу препятствий");
+                }
+            }
+
+        for (int j=0;j< polosa.length;j++){
+            if (polosa[j]==RPlace.length) {
+
+                if (Bar.runpr(RPlace.length) == true) {
+                    System.out.println(Bar.name + " не смог преодолеть полосу препятствий");
+                    break;
+                }
+            }
+            if (polosa[j]==JPlace.height){
+                if(Bar.jumppr(JPlace.height)==true){
+                    System.out.println(Bar.name+" не смог преодолеть полосу препятствий");
+                    break;
+                }
+            }
+            if(j== polosa.length-1) {
+                System.out.println(Bar.name + " успешно преодолевает полосу препятствий");
+            }
+        }
+
+        for (int j=0;j< polosa.length;j++){
+            if (polosa[j]==RPlace.length) {
+
+                if (Rob.runpr(RPlace.length) == true) {
+                    System.out.println(Rob.name + " не смог преодолеть полосу препятствий");
+                    break;
+                }
+            }
+            if (polosa[j]==JPlace.height){
+                if(Rob.jumppr(JPlace.height)==true){
+                    System.out.println(Rob.name+" не смог преодолеть полосу препятствий");
+                    break;
+                }
+            }
+            if(j== polosa.length-1) {
+                System.out.println(Rob.name + " успешно преодолевает полосу препятствий");
             }
         }
     }
