@@ -1,2 +1,7 @@
-package PACKAGE_NAME;public class Apple {
+public class Apple {
+    int weight;
+
+    public Apple(int weight){
+        this.weight=weight;
+    }
 }
