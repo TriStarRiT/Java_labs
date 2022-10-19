@@ -1,7 +1,7 @@
 public class Orange {
-    int weight;
+    double weight;
 
-    public Orange(int weight){
+    public Orange(double weight){
         this.weight=weight;
     }
 }

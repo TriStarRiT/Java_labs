@@ -1,7 +1,7 @@
 public class Apple {
-    int weight;
+    double weight;
 
-    public Apple(int weight){
+    public Apple(double weight){
         this.weight=weight;
     }
 }
