@@ -1,22 +1,11 @@
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Stream;
-import java.util.stream.*;
-import java.util.function.Function;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.*;
-import java.util.List;
-import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args){
         System.out.println("===========Задание 1=============");
         List<String> mass= Arrays.asList("February","March","April","May","July","Autumn","October","November","March","November","December","March","June","July","April","January","September","October","April","March");
-        String[] array={"February","March","April","May","July","Autumn","October","November","March","November","December","March","June","July","April","January","September","October","April","March"};
 
         Map < String, Long > wordsByCount = mass.stream()
                 .collect(Collectors.groupingBy(String::valueOf, Collectors.counting()));
@@ -32,13 +21,15 @@ public class Main {
         System.out.println("Средняя зарплата сотрудников составляет "+b);
 
 
-        List<Worker> worker2 = worker.stream()
-                .filter(p->p.getAge()>30)
+        System.out.println("===========Задание 3=============");
+        int N=4;
+        List<Worker> worker3 = worker.stream()
+                .sorted((o1,o2)->-o1.compareTo(o2))
+                .limit(N)
                 .collect(Collectors.toList());
-
-
-        for (int i=0; i<worker2.size();i++){
-            System.out.println(worker2.get(i));
+        System.out.print(N+" самых старших сотрудников зовут: ");
+        for (int i=0; i<worker3.size();i++){
+            System.out.print(worker3.get(i).re());
         }
 
 

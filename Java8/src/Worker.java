@@ -1,5 +1,5 @@
 
-public class Worker /*implements Comparable<Worker>*/{
+public class Worker implements Comparable<Worker>{
     private String name;
     private int age;
     private int salary;
@@ -17,9 +17,14 @@ public class Worker /*implements Comparable<Worker>*/{
     public String getName(){
         return name;
     }
-/*
+
+    public String re(){
+        return name+" ";
+    }
+
     @Override
     public int compareTo(Worker o) {
-        return salary.compareTo(o.getSalary());
-    }*/
+        return this.getAge()-o.getAge();
+        //return new Integer(o.getAge()).compareTo(new Integer(o.getAge()));
+    }
 }
