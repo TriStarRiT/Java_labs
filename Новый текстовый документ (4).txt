@@ -1,0 +1,61 @@
+CREATE TABLESPACE tb2 LOCATION '';
+CREATE DATABASE db2 TABLESPACE tb2;
+\c db2;
+
+CREATE SCHEMA schema;
+SET search_path TO schema, public;
+
+CREATE DOMAIN pasport AS int NOT NULL; 
+
+CREATE TABLE schema.student(id serial NOT NULL PRIMARY KEY,
+name varchar(20) NOT NULL,
+pasport_ver pasport,
+pasport_num pasport
+);
+
+CREATE TABLE schema.subject(id serial NOT NULL PRIMARY KEY,
+name varchar(20) NOT NULL
+);
+
+CREATE TABLE schema.progress(id serial NOT NULL PRIMARY KEY,
+student serial  REFERENCES schema.student(id) ON DELETE CASCADE,
+subject SERIAL REFERENCES schema.subject(id) ON DELETE CASCADE,
+mark int NOT NULL CHECK(mark>1 and mark<6)
+);
+
+INSERT INTO schema.student VALUES(1, 'Петя', 1, 1);
+INSERT INTO schema.student VALUES(2, 'Вася', 2, 13);
+INSERT INTO schema.student VALUES(3, 'Коля', 3, 11);
+INSERT INTO schema.student VALUES(4, 'Вова', 4, 12);
+
+INSERT INTO schema.subject VALUES(1, 'Математика');
+INSERT INTO schema.subject VALUES(2, 'Физика');
+INSERT INTO schema.subject VALUES(3, 'География');
+
+INSERT INTO schema.progress VALUES(1, 1, 1, 4);
+INSERT INTO schema.progress VALUES(2, 1, 2, 3);
+INSERT INTO schema.progress VALUES(3, 1, 3, 5);
+INSERT INTO schema.progress VALUES(4, 2, 1, 2);
+INSERT INTO schema.progress VALUES(5, 2, 2, 5);
+INSERT INTO schema.progress VALUES(6, 2, 3, 4);
+INSERT INTO schema.progress VALUES(7, 3, 1, 3);
+INSERT INTO schema.progress VALUES(8, 3, 2, 3);
+INSERT INTO schema.progress VALUES(9, 3, 3, 3);
+INSERT INTO schema.progress VALUES(10, 4, 1, 4);
+INSERT INTO schema.progress VALUES(11, 4, 2, 5);
+INSERT INTO schema.progress VALUES(12, 4, 3, 4);
+
+
+SELECT student.name FROM student INNER JOIN progress ON student.id=progress.student WHERE progress.mark > 3 AND progress.subject = 1;
+
+SELECT AVG (progress.mark) FROM progress WHERE progress.subject =1;
+SELECT AVG (progress.mark) FROM progress WHERE progress.student =1;
+
+
+SELECT progress.subject FROM progress WHERE
+
+CREATE OR REPLACE FUNCTION function_name RETURN varchar(20)  AS $$  
+
+
+$$
+LANGUAGE 'plpgsql';
